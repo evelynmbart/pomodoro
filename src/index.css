@@ -6,3 +6,8 @@
 button {
   cursor: pointer;
 }
+
+html {
+  background-color: #30384b;
+  color: #eee;
+}
