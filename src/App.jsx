@@ -1,6 +1,7 @@
 import { createContext, useState } from "react";
 import "./App.css";
 import { Settings } from "./components/Settings";
+import { Timer } from "./components/Timer";
 
 export const SettingsContext = createContext();
 
@@ -11,13 +12,15 @@ function App() {
   const contextValue = {
     workMinutes,
     breakMinutes,
+    setWorkMinutes,
+    setBreakMinutes,
   };
 
   return (
     <main>
       <SettingsContext.Provider value={contextValue}>
         <Settings />
-        {/* <Timer /> */}
+        <Timer />
       </SettingsContext.Provider>
     </main>
   );
