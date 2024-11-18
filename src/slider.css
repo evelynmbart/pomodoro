@@ -1,12 +1,7 @@
 .slider {
-  height: 40px;
-  border: 2px solid red;
-  border-radius: 20px;
+  color: palevioletred;
 }
 
-.thumb {
-  background-color: red;
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
+.slider2 {
+  color: teal;
 }
