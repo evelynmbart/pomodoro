@@ -1,12 +1,26 @@
-import { useState } from "react";
+import { createContext, useState } from "react";
 import "./App.css";
 import { Settings } from "./components/Settings";
-import { Timer } from "./components/Timer";
+
+export const SettingsContext = createContext();
 
 function App() {
-  const [showSettings, setShowSettings] = useState(true);
+  const [workMinutes, setWorkMinutes] = useState(30);
+  const [breakMinutes, setBreakMinutes] = useState(10);
 
-  return <main>{showSettings ? <Settings /> : <Timer />}</main>;
+  const contextValue = {
+    workMinutes,
+    breakMinutes,
+  };
+
+  return (
+    <main>
+      <SettingsContext.Provider value={contextValue}>
+        <Settings />
+        {/* <Timer /> */}
+      </SettingsContext.Provider>
+    </main>
+  );
 }
 
 export default App;
