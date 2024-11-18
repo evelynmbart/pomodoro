@@ -6,7 +6,7 @@ function App() {
   return (
     <main>
       <Timer />
-      <Settings />
+      {/* <Settings /> */}
     </main>
   );
 }
