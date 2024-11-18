@@ -27,3 +27,7 @@ button.with-text svg {
   float: left;
   margin-right: 10px;
 }
+
+label {
+  display: block;
+}

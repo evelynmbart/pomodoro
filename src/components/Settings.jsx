@@ -1,7 +1,8 @@
 export function Settings() {
   return (
-    <div>
-      <div>settings</div>
+    <div style={{ textAlign: "left" }}>
+      <label>Work Minutes:</label>
+      <label>Break Minutes:</label>
     </div>
   );
 }
