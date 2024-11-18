@@ -1,5 +1,6 @@
 import { Slider } from "@mui/material";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { SettingsContext } from "../App";
 import "../slider.css";
 import { BackButton } from "./BackButton";
@@ -36,7 +37,9 @@ export function Settings({}) {
         valueLabelDisplay="auto"
       />
       <div style={{ textAlign: "center", marginTop: "20px" }}>
-        <BackButton />
+        <Link to="/">
+          <BackButton />
+        </Link>
       </div>
     </div>
   );

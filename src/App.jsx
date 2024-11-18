@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Settings } from "./components/Settings";
 import { Timer } from "./components/Timer";
@@ -18,10 +19,14 @@ function App() {
 
   return (
     <main>
-      <SettingsContext.Provider value={contextValue}>
-        <Settings />
-        <Timer />
-      </SettingsContext.Provider>
+      <BrowserRouter>
+        <SettingsContext.Provider value={contextValue}>
+          <Routes>
+            <Route exact path="/" element={<Timer />} />
+            <Route path="/settings" element={<Settings />} />
+          </Routes>
+        </SettingsContext.Provider>
+      </BrowserRouter>
     </main>
   );
 }

@@ -1,5 +1,6 @@
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import { Link } from "react-router-dom";
 import { PauseButton } from "./PauseButton";
 import { PlayButton } from "./PlayButton";
 import { SettingsButton } from "./SettingsButton";
@@ -24,7 +25,9 @@ export function Timer() {
         <PauseButton />
       </div>
       <div style={{ marginTop: "20px" }}>
-        <SettingsButton />
+        <Link to="/settings">
+          <SettingsButton />
+        </Link>
       </div>
     </div>
   );
