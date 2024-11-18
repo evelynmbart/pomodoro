@@ -7,9 +7,6 @@ import { PauseButton } from "./PauseButton";
 import { PlayButton } from "./PlayButton";
 import { SettingsButton } from "./SettingsButton";
 
-const red = "#f54e4e";
-const green = "#4aec8c";
-
 export function Timer() {
   const { workMinutes, breakMinutes, setWorkMinutes, setBreakMinutes } =
     useContext(SettingsContext);
@@ -59,10 +56,13 @@ export function Timer() {
   const totalSeconds = mode === "work" ? workMinutes * 60 : breakMinutes * 60;
   const percentage = Math.round((secondsLeft / totalSeconds) * 100);
 
+  //displays the right number of 0
+
   const minutes = Math.floor(secondsLeft / 60);
   let seconds = secondsLeft % 60;
   if (seconds < 10) seconds = "0" + seconds;
 
+  // this handles the play and pause functionality in one function
   const handle = () => {
     setIsPaused(!isPaused);
     isPausedRef.current = !isPaused;
@@ -75,7 +75,7 @@ export function Timer() {
         text={minutes + ":" + seconds}
         styles={buildStyles({
           textColor: "#fff",
-          pathColor: mode === "work" ? red : green,
+          pathColor: mode === "work" ? "orange" : "teal",
           trailColor: "rgba(255,255,255,.7)",
         })}
       />

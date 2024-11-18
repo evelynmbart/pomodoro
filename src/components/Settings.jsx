@@ -14,7 +14,7 @@ export function Settings({}) {
       <Slider
         className="slider1"
         color="orange"
-        defaultValue={30}
+        value={workMinutes}
         onChange={(e) => setWorkMinutes(e.target.value)}
         aria-label="Working Minutes Slider"
         step={5}
@@ -27,7 +27,7 @@ export function Settings({}) {
       <Slider
         className="slider2"
         color="teal"
-        defaultValue={10}
+        value={breakMinutes}
         onChange={(e) => setBreakMinutes(e.target.value)}
         aria-label="Working Minutes Slider"
         step={5}
