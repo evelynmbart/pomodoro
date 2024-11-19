@@ -3,10 +3,10 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { Link } from "react-router-dom";
 import { SettingsContext } from "../App";
-import { PauseButton } from "./PauseButton";
-import { PlayButton } from "./PlayButton";
-import { SettingsButton } from "./SettingsButton";
-import { TasksButton } from "./TasksButton";
+import { PauseButton } from "./Buttons/PauseButton";
+import { PlayButton } from "./Buttons/PlayButton";
+import { SettingsButton } from "./Buttons/SettingsButton";
+import { TasksButton } from "./Buttons/TasksButton";
 
 export function Timer() {
   const { workMinutes, breakMinutes, setWorkMinutes, setBreakMinutes } =
@@ -70,6 +70,7 @@ export function Timer() {
 
   return (
     <div
+      className="timer"
       style={{
         display: "flex",
         justifyContent: "center",
@@ -95,7 +96,6 @@ export function Timer() {
             textColor: "#fff",
             pathColor: mode === "work" ? "seagreen" : "tomato",
             trailColor: "rgba(255,255,255,.7)",
-            strokeLinecap: "rounded",
           })}
         />
       </div>

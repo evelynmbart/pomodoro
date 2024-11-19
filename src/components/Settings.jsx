@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { SettingsContext } from "../App";
 import "../slider.css";
-import { BackButton } from "./BackButton";
+import { BackButton } from "./Buttons/BackButton";
 
 export function Settings({}) {
   const { workMinutes, breakMinutes, setWorkMinutes, setBreakMinutes } =
