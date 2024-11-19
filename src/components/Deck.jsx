@@ -59,7 +59,6 @@ export function Deck({ tasks }) {
             {...bind(i)}
             style={{
               transform: interpolate([rot, scale], trans),
-              backgroundImage: `url(${tasks[i]})`,
             }}
           >
             <animated.div className="text">

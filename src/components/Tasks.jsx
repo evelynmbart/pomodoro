@@ -13,6 +13,8 @@ export function Tasks() {
     setIsNewTaskOpen(!isNewTaskOpen);
   };
 
+  console.log(tasks);
+
   return (
     <div className="tasks-container">
       <div>
@@ -25,6 +27,7 @@ export function Tasks() {
           <NewTask
             isNewTaskOpen={isNewTaskOpen}
             setIsNewTaskOpen={setIsNewTaskOpen}
+            tasks={tasks}
           />
         ) : (
           <Deck tasks={tasks} />

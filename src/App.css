@@ -85,8 +85,7 @@ label {
   height: 500px;
   will-change: transform;
   border-radius: 100%;
-  box-shadow: 0 12.5px 100px -10px rgba(52, 73, 50, 0.2),
-    0 10px 10px -10px rgba(50, 73, 53, 0.7);
+  box-shadow: 0 10px 10px -10px rgba(50, 73, 53, 0.7);
 }
 
 .text {
