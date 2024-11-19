@@ -45,7 +45,7 @@ export function Settings({}) {
         valueLabelDisplay="auto"
       />
       <div style={{ textAlign: "center", marginTop: "20px" }}>
-        <Link to="/">
+        <Link id="link" to="/">
           <BackButton />
         </Link>
       </div>

@@ -2,6 +2,7 @@ import { createContext, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Settings } from "./components/Settings";
+import { Tasks } from "./components/Tasks";
 import { Timer } from "./components/Timer";
 
 export const SettingsContext = createContext();
@@ -24,6 +25,7 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Timer />} />
             <Route path="/settings" element={<Settings />} />
+            <Route path="/tasks" element={<Tasks />} />
           </Routes>
         </SettingsContext.Provider>
       </BrowserRouter>

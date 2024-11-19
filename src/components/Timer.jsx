@@ -50,7 +50,7 @@ export function Timer() {
       }
 
       tick();
-    }, 10);
+    }, 1000);
     return () => clearInterval(interval);
   }, [workMinutes, breakMinutes, setWorkMinutes, setBreakMinutes]);
 
@@ -109,12 +109,12 @@ export function Timer() {
         )}
       </div>
       <div style={{ marginTop: "20px" }}>
-        <Link to="/settings">
+        <Link id="link" to="/settings">
           <SettingsButton />
         </Link>
       </div>
       <div style={{ marginTop: "20px" }}>
-        <Link>
+        <Link id="link" to="/tasks">
           <TasksButton />
         </Link>
       </div>
