@@ -62,7 +62,9 @@ export function Deck({ tasks }) {
               backgroundImage: `url(${tasks[i]})`,
             }}
           >
-            <animated.div className="text">hello</animated.div>
+            <animated.div className="text">
+              this should be displaying the tasks
+            </animated.div>
           </animated.div>
         </animated.div>
       ))}
