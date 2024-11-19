@@ -10,7 +10,7 @@ export function Tasks() {
   const [isNewTaskOpen, setIsNewTaskOpen] = useState(false);
 
   const handleClick = () => {
-    setIsNewTaskOpen(true);
+    setIsNewTaskOpen(!isNewTaskOpen);
   };
 
   return (
@@ -22,11 +22,16 @@ export function Tasks() {
       </div>
       <div className="tomato-tasks-container">
         {isNewTaskOpen ? (
-          <NewTask />
+          <NewTask
+            isNewTaskOpen={isNewTaskOpen}
+            setIsNewTaskOpen={setIsNewTaskOpen}
+          />
         ) : (
-          <Deck tasks={tasks} /> && <AddTaskButton handleClick={handleClick} />
+          <Deck tasks={tasks} />
         )}
-        {/* <Deck tasks={tasks} /> */}
+      </div>
+      <div style={{ display: isNewTaskOpen ? "none" : "block" }}>
+        <AddTaskButton handleClick={handleClick} />
       </div>
     </div>
   );

@@ -111,7 +111,7 @@ form {
   flex-direction: column;
   width: 500px;
   align-items: center;
-  margin-top: 250px;
+  margin-top: 230px;
   color: white;
 }
 
@@ -130,6 +130,10 @@ input {
 
 input:placeholder-shown {
   color: white;
+}
+
+input:focus {
+  outline: none;
 }
 
 #submit {
