@@ -35,6 +35,7 @@ button.with-text svg {
 
 #link {
   text-decoration: none;
+  color: white;
 }
 
 label {
@@ -77,11 +78,15 @@ label {
   touch-action: none;
 }
 
-.deck > div {
+.card {
   background-image: url("./images/tomato.png");
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
   height: 500px;
   will-change: transform;
   border-radius: 100%;

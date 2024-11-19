@@ -1,6 +1,7 @@
 import { animated, to as interpolate, useSprings } from "@react-spring/web";
 import { useDrag } from "@use-gesture/react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const to = (i) => ({
   x: 0,
@@ -56,6 +57,7 @@ export function Deck({ tasks }) {
         <animated.div className="deck" key={i} style={{ x, y }}>
           {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
           <animated.div
+            className="card"
             {...bind(i)}
             style={{
               transform: interpolate([rot, scale], trans),
@@ -64,6 +66,11 @@ export function Deck({ tasks }) {
             <animated.div className="text">
               this should be displaying the tasks
             </animated.div>
+            <button className="with-text" id="start-task">
+              <Link id="link" to="/">
+                Work on this
+              </Link>
+            </button>
           </animated.div>
         </animated.div>
       ))}

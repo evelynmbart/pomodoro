@@ -81,7 +81,7 @@ export function Timer() {
     >
       <div
         style={{
-          maxWidth: "800px",
+          width: "800px",
           borderRadius: "100%",
           backgroundColor: "tomato",
           display: "flex",
