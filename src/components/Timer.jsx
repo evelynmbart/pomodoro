@@ -57,8 +57,7 @@ export function Timer() {
   const totalSeconds = mode === "work" ? workMinutes * 60 : breakMinutes * 60;
   const percentage = Math.round((secondsLeft / totalSeconds) * 100);
 
-  //displays the right number of 0
-
+  //displays the right number of 0s
   const minutes = Math.floor(secondsLeft / 60);
   let seconds = secondsLeft % 60;
   if (seconds < 10) seconds = "0" + seconds;
@@ -76,12 +75,12 @@ export function Timer() {
         justifyContent: "center",
         flexDirection: "column",
         alignItems: "center",
+        width: "100%",
       }}
     >
       <div
         style={{
-          height: "800px",
-          width: "800px",
+          maxWidth: "800px",
           borderRadius: "100%",
           backgroundColor: "tomato",
           display: "flex",
