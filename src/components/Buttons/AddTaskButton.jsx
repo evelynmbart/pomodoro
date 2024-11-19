@@ -1,6 +1,6 @@
-export function AddTaskButton() {
+export function AddTaskButton({ handleClick }) {
   return (
-    <button className="with-text">
+    <button className="with-text" onClick={handleClick}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
