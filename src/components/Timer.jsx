@@ -6,6 +6,7 @@ import { SettingsContext } from "../App";
 import { PauseButton } from "./PauseButton";
 import { PlayButton } from "./PlayButton";
 import { SettingsButton } from "./SettingsButton";
+import { TasksButton } from "./TasksButton";
 
 export function Timer() {
   const { workMinutes, breakMinutes, setWorkMinutes, setBreakMinutes } =
@@ -49,7 +50,7 @@ export function Timer() {
       }
 
       tick();
-    }, 1000);
+    }, 10);
     return () => clearInterval(interval);
   }, [workMinutes, breakMinutes, setWorkMinutes, setBreakMinutes]);
 
@@ -69,16 +70,37 @@ export function Timer() {
   };
 
   return (
-    <div>
-      <CircularProgressbar
-        value={percentage}
-        text={minutes + ":" + seconds}
-        styles={buildStyles({
-          textColor: "#fff",
-          pathColor: mode === "work" ? "orange" : "teal",
-          trailColor: "rgba(255,255,255,.7)",
-        })}
-      />
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      <div
+        style={{
+          height: "800px",
+          width: "800px",
+          borderRadius: "100%",
+          backgroundColor: "tomato",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <CircularProgressbar
+          value={percentage}
+          text={minutes + ":" + seconds}
+          styles={buildStyles({
+            textColor: "#fff",
+            pathColor: mode === "work" ? "seagreen" : "tomato",
+            trailColor: "rgba(255,255,255,.7)",
+            strokeLinecap: "rounded",
+          })}
+        />
+      </div>
+
       <div style={{ marginTop: "20px" }}>
         {isPaused ? (
           <PlayButton handle={handle} />
@@ -89,6 +111,11 @@ export function Timer() {
       <div style={{ marginTop: "20px" }}>
         <Link to="/settings">
           <SettingsButton />
+        </Link>
+      </div>
+      <div style={{ marginTop: "20px" }}>
+        <Link>
+          <TasksButton />
         </Link>
       </div>
     </div>

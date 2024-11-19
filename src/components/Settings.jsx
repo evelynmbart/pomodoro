@@ -9,7 +9,15 @@ export function Settings({}) {
   const { workMinutes, breakMinutes, setWorkMinutes, setBreakMinutes } =
     useContext(SettingsContext);
   return (
-    <div style={{ textAlign: "left" }}>
+    <div
+      style={{
+        alignItems: "center",
+        backgroundColor: "seagreen",
+        padding: "50px",
+        width: "500px",
+        color: "white",
+      }}
+    >
       <label>Work Time: {workMinutes}:00 mins</label>
       <Slider
         className="slider1"
