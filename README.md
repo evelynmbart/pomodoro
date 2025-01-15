@@ -5,7 +5,7 @@ Welcome to **Pomodoro Task List**! 🍅 A fun, colorful, and effective way to st
 ## Features
 
 - **Task List**: Add and organize tasks you want to work on.
-- **Pomodoro Timer**: Set a timer for each task and work in 25-minute focused intervals, followed by a short break.
+- **Pomodoro Timer**: Set a timer for each task and work in customizable focused intervals, followed by a customizable short break.
 - **Colorful & Fun**: Enjoy a bright, tomato-themed interface that makes staying on task a little more enjoyable.
 - **Progress Tracking**: See how much you’ve accomplished with each completed Pomodoro session.
 
