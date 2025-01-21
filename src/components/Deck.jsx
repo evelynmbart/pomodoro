@@ -70,11 +70,20 @@ export function Deck({ tasks, onRemove }) {
               transform: interpolate([rot, scale], trans),
             }}
           >
-            <animated.div className="text">{tasks[i]}</animated.div>
+            <animated.div
+              className="text"
+              style={{ fontFamily: "monospace", fontSize: "3rem" }}
+            >
+              {tasks[i]}
+            </animated.div>
             <div
               style={{ display: "flex", flexDirection: "column", gap: "10px" }}
             >
-              <button className="with-text" id="start-task">
+              <button
+                className="with-text"
+                id="start-task"
+                style={{ fontFamily: "monospace", fontSize: "1.2rem" }}
+              >
                 <Link id="link" to="/">
                   Work on this
                 </Link>
