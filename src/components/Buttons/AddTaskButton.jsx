@@ -1,6 +1,10 @@
 export function AddTaskButton({ handleClick }) {
   return (
-    <button className="with-text" onClick={handleClick}>
+    <button
+      className="with-text"
+      onClick={handleClick}
+      style={{ fontFamily: "monospace", fontSize: "1.2rem" }}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"

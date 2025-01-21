@@ -16,9 +16,18 @@ export function Settings({}) {
         padding: "50px",
         width: "500px",
         color: "white",
+        borderRadius: "25px",
+        boxShadow: "0 10px 20px rgba(0,0,0,0.2)",
+        margin: "50px auto",
+        position: "absolute",
+        left: "50%",
+        top: "50%",
+        transform: "translate(-50%, -50%)",
       }}
     >
-      <label>Work Time: {workMinutes}:00 mins</label>
+      <label style={{ fontFamily: "monospace", fontSize: "2.2rem" }}>
+        Work Time: {workMinutes}:00 mins
+      </label>
       <Slider
         className="slider1"
         color="orange"
@@ -31,7 +40,9 @@ export function Settings({}) {
         max={60}
         valueLabelDisplay="auto"
       />
-      <label>Break Time: {breakMinutes}:00 mins</label>
+      <label style={{ fontFamily: "monospace", fontSize: "2.2rem" }}>
+        Break Time: {breakMinutes}:00 mins
+      </label>
       <Slider
         className="slider2"
         color="teal"

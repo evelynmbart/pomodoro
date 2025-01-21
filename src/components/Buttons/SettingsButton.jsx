@@ -1,6 +1,9 @@
 export function SettingsButton() {
   return (
-    <button className="with-text">
+    <button
+      className="with-text"
+      style={{ fontFamily: "monospace", fontSize: "1.2rem" }}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-5 w-5"

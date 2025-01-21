@@ -5,6 +5,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: "monospace";
 }
 
 button {
@@ -13,6 +14,7 @@ button {
   border: none;
   display: inline-block;
   width: 100px;
+  font-family: "monospace";
 }
 
 button.with-text {
@@ -25,12 +27,14 @@ button.with-text {
   padding: 10px;
   font-size: 2rem;
   line-height: 36px;
+  font-family: "monospace";
 }
 
 button.with-text svg {
   width: 36px;
   float: left;
   margin-right: 10px;
+  font-family: "monospace";
 }
 
 #link {
