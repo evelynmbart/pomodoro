@@ -58,15 +58,11 @@ label {
   display: flex;
   align-items: center;
   width: 500px;
-  height: 875px;
+  height: 500px;
+  margin-bottom: 20px;
   justify-content: center;
 }
-.tomato-tasks-container:hover {
-  cursor: grab;
-}
-.tomato-tasks-container:active {
-  cursor: grabbing;
-}
+
 .deck {
   position: absolute;
   width: 500px;
@@ -88,7 +84,6 @@ label {
   align-items: center;
   gap: 30px;
   height: 500px;
-  will-change: transform;
   border-radius: 100%;
   box-shadow: 0 10px 10px -10px rgba(50, 73, 53, 0.7);
 }

@@ -30,7 +30,10 @@ export function Deck({ tasks, onRemove }) {
       const dir = xDir < 0 ? -1 : 1;
       if (!down && trigger) {
         gone.add(index);
-        // Call onRemove when card is swiped away
+        // Move the swiped card to the back
+        const tasksCopy = [...tasks];
+        const [removedTask] = tasksCopy.splice(index, 1);
+        tasksCopy.push(removedTask);
         onRemove(index);
       }
       api.start((i) => {
@@ -47,6 +50,12 @@ export function Deck({ tasks, onRemove }) {
           config: { friction: 50, tension: down ? 800 : isGone ? 200 : 500 },
         };
       });
+      if (!down && gone.size === tasks.length) {
+        setTimeout(() => {
+          gone.clear();
+          api.start((i) => to(i));
+        }, 600);
+      }
     }
   );
 
@@ -62,11 +71,34 @@ export function Deck({ tasks, onRemove }) {
             }}
           >
             <animated.div className="text">{tasks[i]}</animated.div>
-            <button className="with-text" id="start-task">
-              <Link id="link" to="/">
-                Work on this
-              </Link>
-            </button>
+            <div
+              style={{ display: "flex", flexDirection: "column", gap: "10px" }}
+            >
+              <button className="with-text" id="start-task">
+                <Link id="link" to="/">
+                  Work on this
+                </Link>
+              </button>
+              <button
+                title="Delete"
+                onClick={() => onRemove(i)}
+                style={{
+                  backgroundColor: "tomato",
+                  width: "30px",
+                  height: "30px",
+                  borderRadius: "50%",
+                  padding: "0",
+                  fontSize: "1.2rem",
+                  fontWeight: "bold",
+                  position: "absolute",
+                  top: "110px",
+                  right: "80px",
+                  boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.3)",
+                }}
+              >
+                ×
+              </button>
+            </div>
           </animated.div>
         </animated.div>
       ))}

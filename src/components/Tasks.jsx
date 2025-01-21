@@ -5,12 +5,7 @@ import { NewTask } from "./NewTask";
 
 export function Tasks() {
   const [isNewTaskOpen, setIsNewTaskOpen] = useState(false);
-  const [tasks, setTasks] = useState([
-    "clean room",
-    "do laundry",
-    "walk the dog",
-    "call mom",
-  ]);
+  const [tasks, setTasks] = useState([]);
 
   const handleClick = () => {
     setIsNewTaskOpen(!isNewTaskOpen);
