@@ -3,16 +3,26 @@ import { AddTaskButton } from "./Buttons/AddTaskButton";
 import { Deck } from "./Deck";
 import { NewTask } from "./NewTask";
 
-const tasks = ["clean room", "do laundry", "walk the dog", "call mom"];
-
 export function Tasks() {
   const [isNewTaskOpen, setIsNewTaskOpen] = useState(false);
+  const [tasks, setTasks] = useState([
+    "clean room",
+    "do laundry",
+    "walk the dog",
+    "call mom",
+  ]);
 
   const handleClick = () => {
     setIsNewTaskOpen(!isNewTaskOpen);
   };
 
-  console.log(tasks);
+  const handleAddTask = (newTask) => {
+    setTasks([...tasks, newTask]);
+  };
+
+  const handleRemoveTask = (index) => {
+    setTasks(tasks.filter((_, i) => i !== index));
+  };
 
   return (
     <div className="tasks-container">
@@ -21,10 +31,10 @@ export function Tasks() {
           <NewTask
             isNewTaskOpen={isNewTaskOpen}
             setIsNewTaskOpen={setIsNewTaskOpen}
-            tasks={tasks}
+            onAddTask={handleAddTask}
           />
         ) : (
-          <Deck tasks={tasks} />
+          <Deck tasks={tasks} onRemove={handleRemoveTask} />
         )}
       </div>
       <div style={{ display: isNewTaskOpen ? "none" : "block" }}>

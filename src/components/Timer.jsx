@@ -77,11 +77,12 @@ export function Timer() {
         flexDirection: "column",
         alignItems: "center",
         width: "100%",
+        marginTop: "50px",
       }}
     >
       <div
         style={{
-          width: "800px",
+          width: "300px",
           borderRadius: "100%",
           backgroundColor: "tomato",
           display: "flex",
